@@ -23,6 +23,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
+<<<<<<< HEAD
 /* =========================
    APP LAYOUT (IMPORTANT FIX)
 ========================= */
@@ -30,6 +31,9 @@ h1, h2, h3 {
 body {
   display: block; /* 🚨 removes flex centering problem */
 }
+=======
+
+>>>>>>> 02c8179fd80d6d0d551d814f4d265df3465030cb
 
 /* main containers */
 #lists,
