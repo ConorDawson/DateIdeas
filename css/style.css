@@ -216,70 +216,80 @@ h3 {
 
 
 /* =========================
-   📱 MOBILE PHONE OPTIMISATION
+   📱 TRUE MOBILE APP LAYOUT FIX
 ========================= */
 
 @media (max-width: 768px) {
 
-  /* overall spacing */
+  /* stop the "tiny centered website" effect */
   body {
-    padding: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: block; /* IMPORTANT: overrides flex centering issue */
   }
 
-  /* headings scale better on phones */
+  /* main content spacing */
+  #lists,
+  #ideas,
+  .container {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  /* make headings feel like app headers */
   h1 {
-    font-size: 24px;
+    font-size: 26px;
     text-align: center;
+    margin: 16px 0;
   }
 
-  h3 {
-    font-size: 18px;
-  }
-
-  /* make inputs full width (huge UX upgrade) */
+  /* inputs full width + bigger touch targets */
   input {
     width: 100%;
-    margin: 6px 0;
     font-size: 16px;
+    padding: 14px;
+    margin: 8px 0;
+    box-sizing: border-box;
   }
 
-  /* buttons also full width for easy tapping */
+  /* buttons full width like mobile apps */
   button {
     width: 100%;
-    margin: 6px 0;
     font-size: 16px;
+    padding: 14px;
+    margin: 8px 0;
+    border-radius: 12px;
   }
 
-  /* cards feel more like app tiles */
+  /* cards become full-width mobile tiles */
   #lists > div,
   #ideas > div,
   .card {
-    padding: 12px;
-    border-radius: 14px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 14px;
+    border-radius: 16px;
+    box-sizing: border-box;
   }
 
-  /* navbar stacks vertically on mobile */
+  /* navbar becomes stacked mobile bar */
   nav {
     flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    padding: 10px;
+    gap: 8px;
   }
 
-  /* list layout spacing improves readability */
-  #lists,
-  #ideas {
-    width: 100%;
-  }
-
-  /* modal becomes more phone-friendly */
-  .modal-box {
-    width: 90%;
-    padding: 20px;
-  }
-
-  /* toast is slightly higher so keyboard doesn't block it */
+  /* toast/modal adjustments */
   #toast {
-    bottom: 80px;
-    font-size: 13px;
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .modal-box {
+    width: 92%;
+    max-width: none;
   }
 }
