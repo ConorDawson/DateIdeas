@@ -213,3 +213,73 @@ h3 {
 .hidden {
   display: none;
 }
+
+
+/* =========================
+   📱 MOBILE PHONE OPTIMISATION
+========================= */
+
+@media (max-width: 768px) {
+
+  /* overall spacing */
+  body {
+    padding: 10px;
+  }
+
+  /* headings scale better on phones */
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  /* make inputs full width (huge UX upgrade) */
+  input {
+    width: 100%;
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  /* buttons also full width for easy tapping */
+  button {
+    width: 100%;
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  /* cards feel more like app tiles */
+  #lists > div,
+  #ideas > div,
+  .card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  /* navbar stacks vertically on mobile */
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* list layout spacing improves readability */
+  #lists,
+  #ideas {
+    width: 100%;
+  }
+
+  /* modal becomes more phone-friendly */
+  .modal-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* toast is slightly higher so keyboard doesn't block it */
+  #toast {
+    bottom: 80px;
+    font-size: 13px;
+  }
+}
