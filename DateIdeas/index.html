@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Ideas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1>Date Ideas ❤️</h1>
+
+  <input id="username" placeholder="username">
+  <input id="password" placeholder="password">
+
+  <button onclick="registerUser()">Register</button>
+  <button onclick="loginUser()">Login</button>
+
+  <script type="module">
+    import { register, login } from "./js/auth.js";
+
+    // -----------------------
+    // REGISTER
+    // -----------------------
+    window.registerUser = async () => {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+
+      const result = await register(u, p);
+
+      console.log("REGISTER RESULT:", result);
+      alert("Registered ✔");
+    };
+
+    // -----------------------
+    // LOGIN (FIXED)
+    // -----------------------
+    window.loginUser = async () => {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+
+      const result = await login(u, p);
+
+      console.log("LOGIN RESULT:", result);
+
+      // ✅ FIX: login() returns user object, NOT {data: ...}
+      if (result) {
+        window.location.href = "./pages/dashboard.html";
+      } else {
+        alert("Login failed ❌");
+      }
+    };
+  </script>
+</body>
+</html>
